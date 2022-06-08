@@ -1,8 +1,6 @@
 <template>
   <footer>
     Powered by
-    <!-- <a href="https://github.com/clark-cui/" target="_blank" title="作者"
-      >clark-cui</a -->
     <a href="" target="_blank" title="作者">ooo</a>
     | Copyright © 2022-{{ date }} | MIT License
   </footer>
@@ -12,13 +10,19 @@ const date = new Date().getFullYear();
 </script>
 <style scoped>
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
   text-align: center;
   position: absolute;
   width: 100%;
   bottom: 20px;
   padding: 0 20px;
-  background: var(--c-bg);
-  color: var(--c-text);
+  /* background: var(--c-bg); */
+  background-color: rgba(62, 69, 80, 1);
+  /* color: var(--c-text); */
+  color: #fff;
 }
 a {
   color: var(--c-brand);

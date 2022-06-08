@@ -83,7 +83,7 @@ const go = (platform) => {
 <style lang='scss' scoped>
 .my-card {
   // height: 100vh;
-  height: 953px;
+  height: 58rem;
   display: flex;
   flex-direction: column;
   align-items: center;

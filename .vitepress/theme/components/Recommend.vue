@@ -48,7 +48,8 @@ const getOthers = () => { }
 <style lang='scss' scoped>
 .rec-content {
   background-color: #fff;
-  height: 40rem;
+  min-height: 40rem;
+  padding-bottom: 2rem;
   border-radius: 5px;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
   .rec-title1,

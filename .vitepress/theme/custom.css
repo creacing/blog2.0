@@ -138,11 +138,14 @@ header {
   background-size: 100% 100%;
 }
 
-@media (max-width: 1000px) {
+
+@media (max-width: 900px) {
   .nav-bar {
     width: 100%;
   }
+}
 
+@media (max-width: 700px) {
   .nav-links>.item:nth-child(1)>.nav-link>.item::before {
     top: 10px;
     left: 5px;
@@ -167,7 +170,6 @@ header {
     top: 10px;
     left: 5px;
   }
-
 }
 
 /* 滚动条的宽度 */
@@ -185,4 +187,18 @@ header {
 ::-webkit-scrollbar-thumb {
   background-color: grey;
   border-radius: 5px;
+}
+
+.nav {
+  padding: 0, 2rem !important;
+}
+
+.nav-bar>.nav {
+  padding: 0 2rem;
+}
+
+@media (max-width: 900px) {
+  .nav-bar>.nav {
+    /* display: none; */
+  }
 }

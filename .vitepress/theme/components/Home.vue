@@ -2,7 +2,7 @@
   <div>
     <Home-head />
     <div class="blog-list">
-      <Recommend style="max-width: 70rem; width: 70rem; margin: 0 1rem" />
+      <Recommend class="recommend" />
       <div class="blog-bg">
         <a
           class="blog-item"
@@ -15,15 +15,20 @@
       </div>
     </div>
     <div class="pagination">
-      <div
-        class="link"
-        :class="{ activeLink: pageCurrent === i }"
-        v-for="i in pagesNum"
-        :key="i"
-        @click="go(i)"
-      >
-        {{ i }}
+      <button class="page-btn" @click="getPage">&lt;</button>
+      <div class="pages">
+        <div
+          class="link"
+          :class="{ activeLink: pageCurrent === i }"
+          v-for="i in pagesNum"
+          :key="i"
+          @click="go(i)"
+        >
+          {{ i }}
+        </div>
       </div>
+
+      <button class="page-btn" @click="getPage">></button>
     </div>
   </div>
 </template>
@@ -34,7 +39,9 @@ import HomeHead from "./HomeHead.vue";
 import { ref } from "vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
+const getPage = () => {
 
+}
 // get posts
 let postsAll = theme.value.posts || [];
 // get postLength
@@ -134,6 +141,15 @@ const transDate = (date) => {
 </script>
 
 <style scoped lang='scss'>
+.recommend {
+  width: 60%;
+  margin: 0 1rem;
+}
+@media (max-width: 1000px) {
+  .recommend {
+    width: 95%;
+  }
+}
 .blog-list {
   padding-bottom: 10rem;
   display: flex;
@@ -142,7 +158,8 @@ const transDate = (date) => {
   align-items: center;
   .blog-bg {
     display: flex;
-    max-width: 70rem;
+    // max-width: 70rem;
+    width: 60%;
     flex-wrap: wrap;
     justify-content: space-between;
     .blog-item {
@@ -156,7 +173,7 @@ const transDate = (date) => {
   }
   @media (max-width: 1000px) {
     .blog-bg {
-      width: 100%;
+      width: 95%;
       justify-content: center;
     }
   }
@@ -164,10 +181,25 @@ const transDate = (date) => {
 .pagination {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: absolute;
-  bottom: 70px;
-  width: 100%;
+  bottom: 100px;
+  width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  .page-btn {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+  }
+  .pages {
+    display: flex;
+  }
+}
+@media (max-width: 1000px) {
+  .pagination {
+    width: 95%;
+  }
 }
 .link {
   margin-right: 5px;

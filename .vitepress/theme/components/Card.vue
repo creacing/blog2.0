@@ -48,8 +48,7 @@ const demoArticle = {
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 25rem;
-  width: 20rem;
+
   border-radius: 5px;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -116,6 +115,12 @@ const demoArticle = {
         margin: 0 1px;
       }
     }
+  }
+}
+@media (min-width: 1000px) {
+  .card-body {
+    height: 25rem;
+    width: 22rem;
   }
 }
 .card-body:hover {
