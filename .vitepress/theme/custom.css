@@ -1,0 +1,187 @@
+/* .vitepress/theme/custom.css */
+:root {
+  --c-brand: #646cff;
+  --c-brand-light: #747bff;
+  --c-hover: #212121;
+  --c-bg: unset;
+  --c-color: #000000;
+}
+
+.dark {
+  /* --c-brand: red;
+  --c-brand-light: pink; */
+  --c-bg: black;
+  --c-text: white;
+  --c-hover: #ffffff;
+}
+
+#app {
+  min-height: 100vh;
+  position: relative;
+}
+
+h2,
+h3,
+p {
+  color: var(--c-color);
+}
+
+/* html, body, #app {
+  height: 100%;
+} */
+.page,
+.home {
+  background: rgba(255, 255, 255, 0.3);
+  /* height: 100%; */
+  min-height: 100vh
+}
+
+/* a {
+} */
+/* a:hover {
+  text-decoration: none;
+  color: var(--c-brand-light);
+} */
+.theme {
+  /* height: 100%; */
+  background-color: var(--c-bg);
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* yj 导航栏背景色*/
+.nav-bar {
+  /* background-color: rgb(19, 172, 248) !important; */
+  width: 60%;
+  position: fixed;
+  left: 50% !important;
+  top: 0;
+  transform: translateX(-50%);
+  border-bottom: unset !important;
+  z-index: 1000;
+}
+
+.nav-links .item .nav-link .item {
+  color: #ffffff !important;
+  font-size: 0.7rem;
+}
+
+.nav-bar-title {
+  color: #ffffff !important;
+  font-size: 1rem;
+}
+
+.nav-links .item .nav-link {
+  position: relative;
+  margin-right: 2rem;
+}
+
+.nav-links>.item:nth-child(1)>.nav-link>.item::before {
+  content: '';
+  background-image: url(/home.svg);
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.nav-links>.item:nth-child(2)>.nav-link>.item::before {
+  content: '';
+  background-image: url(/article.svg);
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.nav-links>.item:nth-child(3)>.nav-link>.item::before {
+  content: '';
+  background-image: url(/tag.svg);
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.nav-links>.item:nth-child(4)>.nav-link>.item::before {
+  content: '';
+  background-image: url(/about.svg);
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.nav-links>.item:nth-child(5)>.nav-link>.item::before {
+  content: '';
+  background-image: url(/search.svg);
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+@media (max-width: 1000px) {
+  .nav-bar {
+    width: 100%;
+  }
+
+  .nav-links>.item:nth-child(1)>.nav-link>.item::before {
+    top: 10px;
+    left: 5px;
+  }
+
+  .nav-links>.item:nth-child(2)>.nav-link>.item::before {
+    top: 10px;
+    left: 5px;
+  }
+
+  .nav-links>.item:nth-child(3)>.nav-link>.item::before {
+    top: 10px;
+    left: 5px;
+  }
+
+  .nav-links>.item:nth-child(4)>.nav-link>.item::before {
+    top: 10px;
+    left: 5px;
+  }
+
+  .nav-links>.item:nth-child(5)>.nav-link>.item::before {
+    top: 10px;
+    left: 5px;
+  }
+
+}
+
+/* 滚动条的宽度 */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* 滚动条的按钮 */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* 滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 5px;
+}
