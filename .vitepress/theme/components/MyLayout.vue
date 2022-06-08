@@ -3,12 +3,14 @@
     <div class="bg-cover"></div>
     <div :class="showNavCover ? 'nav-cover' : ''"></div>
     <Layout>
-      <!-- <template #navbar-search></template> -->
-      <!-- <template #page-top class="page-top">
+      <template #navbar-search></template>
+      <template #page-top class="page-top">
         <Title v-if="isPost" />
         <Category v-if="isPost" />
-      </template> -->
-      <template #page-bottom><Card /> </template>
+      </template>
+      <template #page-bottom class="page-bottom">
+        <Recommend />
+      </template>
       <!-- Home slot-->
       <template #home-features> <Page /></template>
     </Layout>
@@ -19,6 +21,8 @@
 <script lang="ts" setup>
 import DefaultTheme from "vitepress/theme";
 const { Layout } = DefaultTheme;
+
+import Recommend from "./Recommend.vue";
 import CopyWright from "./CopyWright.vue";
 import Card from "./Card.vue";
 import Page from "./Page.vue";
@@ -48,7 +52,7 @@ const scrollTop = () => {
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.1);
 }
 .bg-cover {
   position: absolute;
@@ -56,8 +60,13 @@ const scrollTop = () => {
   left: 0;
   width: 100%;
   // height: 100vh;
-  height: 953px;
+  height: 60rem;
   background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
   background-clip: text;
+}
+.page-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

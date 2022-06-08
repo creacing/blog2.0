@@ -146,6 +146,7 @@ const transDate = (date: string) => {
     display: flex;
     max-width: 70rem;
     flex-wrap: wrap;
+    justify-content: space-between;
     .blog-item {
       margin: 1rem;
       display: block;
@@ -153,6 +154,12 @@ const transDate = (date: string) => {
     }
     .blog-item:hover {
       text-decoration: none;
+    }
+  }
+  @media (max-width: 1000px) {
+    .blog-bg {
+      width: 100%;
+      justify-content: center;
     }
   }
 }

@@ -39,11 +39,13 @@ const demoArticle = {
 </script>
 <style lang='scss' scoped>
 .card-body {
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: 25rem;
   width: 20rem;
   border-radius: 5px;
+
   .card-part1 {
     height: 12rem;
     background: rgba(236, 231, 231, 0.2);
