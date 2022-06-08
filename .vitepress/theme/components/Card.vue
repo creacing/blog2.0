@@ -45,6 +45,7 @@ const demoArticle = {
 </script>
 <style lang='scss' scoped>
 .card-body {
+  animation: smallToLarge 2s;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -125,6 +126,17 @@ const demoArticle = {
 }
 .card-body:hover {
   padding: 5px;
+}
+@keyframes smallToLarge {
+  /*这个就是要执行的动画*/
+  from {
+    transform: scale(0);
+  }
+
+  /*从它到它，scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数，这个是css3中2D的转换方法。*/
+  to {
+    transform: scale(1);
+  }
 }
 </style>
 

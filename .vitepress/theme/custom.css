@@ -7,14 +7,6 @@
   --c-color: #000000;
 }
 
-.dark {
-  /* --c-brand: red;
-  --c-brand-light: pink; */
-  --c-bg: black;
-  --c-text: white;
-  --c-hover: #ffffff;
-}
-
 #app {
   min-height: 100vh;
   position: relative;
@@ -29,12 +21,10 @@ p {
 .page,
 .home {
   background: rgba(255, 255, 255, 0.3);
-  /* height: 100%; */
   min-height: 100vh
 }
 
 .theme {
-  /* height: 100%; */
   background-color: var(--c-bg);
 }
 

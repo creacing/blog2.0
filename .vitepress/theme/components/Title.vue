@@ -3,19 +3,11 @@
   <div class="date">🕒 lastUpdated: {{ date }}</div>
   <!-- <div class="description">{{ description }}</div> -->
 </template>
-<script lang="ts" setup>
+<script setup>
 import { useData } from "vitepress";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-type pageData = {
-  description: string;
-  title: string;
-  frontmatter: object;
-  headers: object[];
-  lastUpdated: number;
-  relativePath: string;
-};
-const pageData: pageData = useData().page.value;
+const pageData = useData().page.value;
 const { title, description, lastUpdated } = pageData;
 // /https://day.js.org/docs/zh-CN/plugin/relative-time
 dayjs.extend(relativeTime);
