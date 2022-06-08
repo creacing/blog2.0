@@ -49,7 +49,7 @@ const scrollTop = () => {
   top: 0;
   left: 0;
   width: 100%;
-  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
 }
 .bg-cover {
   position: absolute;

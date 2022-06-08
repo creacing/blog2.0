@@ -33,7 +33,7 @@
   </div>
 </template>
 <script setup>
-import { ref, defineProps, toRefs } from "vue";
+import { ref, toRefs } from "vue";
 const props = defineProps({
   cardValue: {
     type: Object,
@@ -147,7 +147,7 @@ const demoArticle = {
 @keyframes smallToLarge {
   /*这个就是要执行的动画*/
   from {
-    transform: scale(0.9);
+    transform: scale(1.1);
   }
 
   /*从它到它，scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数，这个是css3中2D的转换方法。*/
