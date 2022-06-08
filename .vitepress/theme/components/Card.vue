@@ -2,7 +2,13 @@
   <div class="card">
     <div class="card-body">
       <div class="card-part1">
-        <div class="card-bg"></div>
+        <div class="card-bg">
+          <img
+            src="https://image.3001.net/images/20220123/16429456471702.png"
+            alt=""
+            style="height: 100%; width: 100%"
+          />
+        </div>
         <div class="card-title">{{ demoArticle.title }}</div>
       </div>
       <div class="card-part2">
@@ -45,6 +51,8 @@ const demoArticle = {
   height: 25rem;
   width: 20rem;
   border-radius: 5px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 
   .card-part1 {
     height: 12rem;

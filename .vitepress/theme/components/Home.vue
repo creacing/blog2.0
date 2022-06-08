@@ -1,7 +1,8 @@
 <template>
   <div>
-    <MyCard />
+    <Home-head />
     <div class="blog-list">
+      <Recommend style="max-width: 70rem; width: 70rem; margin: 0 1rem" />
       <div class="blog-bg">
         <a
           class="blog-item"
@@ -26,14 +27,11 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-interface post {
-  regularPath: string;
-  frontMatter: object;
-}
+<script  setup>
 import Card from "./Card.vue";
-import { onMounted, ref, reactive } from "vue";
-import MyCard from "./MyCard.vue";
+import Recommend from "./Recommend.vue"
+import HomeHead from "./HomeHead.vue";
+import { ref } from "vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
 
@@ -52,7 +50,7 @@ pagesNum = parseInt(pagesNum.toString());
 //pageCurrent
 let pageCurrent = ref(1);
 // filter index post
-postsAll = postsAll.filter((item: post) => {
+postsAll = postsAll.filter((item) => {
   return item.regularPath.indexOf("index") < 0;
 });
 // pagination
@@ -77,7 +75,7 @@ const go = (i) => {
   posts.value = allMap[pageCurrent.value - 1];
 };
 // timestamp transform
-const transDate = (date: string) => {
+const transDate = (date) => {
   const dateArray = date.split("-");
   let year = dateArray[0],
     month = ``,
@@ -148,7 +146,7 @@ const transDate = (date: string) => {
     flex-wrap: wrap;
     justify-content: space-between;
     .blog-item {
-      margin: 1rem;
+      margin: 1rem 0;
       display: block;
       cursor: pointer;
     }

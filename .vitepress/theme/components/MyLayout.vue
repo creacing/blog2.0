@@ -8,24 +8,21 @@
         <Title v-if="isPost" />
         <Category v-if="isPost" />
       </template>
-      <template #page-bottom class="page-bottom">
-        <Recommend />
-      </template>
+      <template #page-bottom> </template>
       <!-- Home slot-->
-      <template #home-features> <Page /></template>
+      <template #home-features> <home /></template>
     </Layout>
     <!-- copywright -->
     <CopyWright />
   </div>
 </template>
-<script lang="ts" setup>
+<script setup>
 import DefaultTheme from "vitepress/theme";
 const { Layout } = DefaultTheme;
-
 import Recommend from "./Recommend.vue";
 import CopyWright from "./CopyWright.vue";
 import Card from "./Card.vue";
-import Page from "./Page.vue";
+import Home from "./Home.vue";
 import Category from "./Category.vue";
 import Title from "./Title.vue";
 import { useData } from "vitepress";
@@ -63,10 +60,5 @@ const scrollTop = () => {
   height: 60rem;
   background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
   background-clip: text;
-}
-.page-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 </style>

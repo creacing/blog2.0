@@ -23,9 +23,10 @@ import { ref } from 'vue'
 </script>
 <style lang='scss' scoped>
 .rec-content {
-  width: 60%;
   background-color: #fff;
-  height: 900px;
+  height: 40rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
 }
 </style>
 
