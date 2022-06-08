@@ -26,9 +26,6 @@ p {
   color: var(--c-color);
 }
 
-/* html, body, #app {
-  height: 100%;
-} */
 .page,
 .home {
   background: rgba(255, 255, 255, 0.3);
@@ -36,12 +33,6 @@ p {
   min-height: 100vh
 }
 
-/* a {
-} */
-/* a:hover {
-  text-decoration: none;
-  color: var(--c-brand-light);
-} */
 .theme {
   /* height: 100%; */
   background-color: var(--c-bg);
@@ -53,7 +44,6 @@ header {
 
 /* yj 导航栏背景色*/
 .nav-bar {
-  /* background-color: rgb(19, 172, 248) !important; */
   width: 60%;
   position: fixed;
   left: 50% !important;
@@ -64,12 +54,12 @@ header {
 }
 
 .nav-links .item .nav-link .item {
-  color: #ffffff !important;
+  color: #fff !important;
   font-size: 0.7rem;
 }
 
 .nav-bar-title {
-  color: #ffffff !important;
+  color: #fff !important;
   font-size: 1rem;
 }
 
@@ -195,10 +185,4 @@ header {
 
 .nav-bar>.nav {
   padding: 0 2rem;
-}
-
-@media (max-width: 900px) {
-  .nav-bar>.nav {
-    /* display: none; */
-  }
 }

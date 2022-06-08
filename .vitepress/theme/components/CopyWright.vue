@@ -17,7 +17,7 @@ footer {
   text-align: center;
   position: absolute;
   width: 100%;
-  bottom: 20px;
+  bottom: 0;
   padding: 0 20px;
   /* background: var(--c-bg); */
   background-color: rgba(62, 69, 80, 1);
