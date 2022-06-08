@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative">
     <div class="bg-cover"></div>
-    <div class="nav-cover"></div>
+    <div :class="showNavCover ? 'nav-cover' : ''"></div>
     <Layout>
       <!-- <template #navbar-search></template> -->
       <!-- <template #page-top class="page-top">
@@ -25,11 +25,21 @@ import Page from "./Page.vue";
 import Category from "./Category.vue";
 import Title from "./Title.vue";
 import { useData } from "vitepress";
-import { computed } from "vue";
+import { computed, ref, onMounted } from "vue";
+const showNavCover = ref(false);
 const isPost = computed(() => {
   //判断是否为文章页面用于控制 <Title/> <Category/> 显示
   return useData().page.value.relativePath.indexOf("posts") > -1 ? true : false;
 });
+onMounted(() => {
+  // 监听滚动条位置
+  window.addEventListener("scroll", scrollTop, true);
+});
+// 实时滚动条高度
+const scrollTop = () => {
+  let scroll = document.documentElement.scrollTop || document.body.scrollTop;
+  scroll > 0 ? (showNavCover.value = true) : (showNavCover.value = false);
+};
 </script>
 <style lang='scss' scoped>
 .nav-cover {
@@ -38,7 +48,8 @@ const isPost = computed(() => {
   top: 0;
   left: 0;
   width: 100%;
-border-bo}
+  box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.2);
+}
 .bg-cover {
   position: absolute;
   top: 0;
