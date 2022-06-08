@@ -15,10 +15,10 @@
         <div class="card-intro">{{ demoArticle.intro }}</div>
       </div>
       <div class="card-part3">
-        <div class="card-timezone">{{ demoArticle.time }}</div>
+        <div class="card-timezone">⏳ {{ demoArticle.time }}</div>
         <div class="card-types">
           <div class="card-type" v-for="type in demoArticle.type" :key="type">
-            <a>{{ type }}</a>
+            <a>🏷️ {{ type }}</a>
           </div>
         </div>
       </div>
@@ -126,7 +126,7 @@ const demoArticle = {
       .card-tag {
         border-radius: 10px;
         padding: 4px 6px;
-        background-color: rgb(221, 217, 217);
+        background-color: rgb(127, 189, 255);
         // width: 3rem;
         text-align: center;
         line-height: 1rem;

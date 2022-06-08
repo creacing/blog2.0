@@ -1,4 +1,5 @@
 <template>
+  <div class="bg-cover"></div>
   <div>
     <Home-head />
     <div class="blog-list">
@@ -190,6 +191,16 @@ const transDate = (date) => {
 </script>
 
 <style scoped lang='scss'>
+.bg-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  //   height: 60rem;
+  background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
+  background-clip: text;
+}
 .recommend {
   width: 60%;
   margin: 0 1rem;

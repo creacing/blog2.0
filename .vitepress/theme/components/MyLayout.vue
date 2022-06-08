@@ -1,6 +1,5 @@
 <template>
   <div style="position: relative">
-    <div class="bg-cover"></div>
     <div :class="showNavCover ? 'nav-cover' : ''"></div>
     <Layout>
       <template #navbar-search></template>
