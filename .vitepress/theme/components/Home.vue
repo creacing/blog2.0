@@ -10,7 +10,7 @@
           :href="withBase(item.regularPath)"
           :key="item"
         >
-          <Card />
+          <Card :card-value="item" />
         </a>
       </div>
     </div>
@@ -34,14 +34,13 @@
 </template>
 <script  setup>
 import Card from "./Card.vue";
-import Recommend from "./Recommend.vue"
+import Recommend from "./Recommend.vue";
 import HomeHead from "./HomeHead.vue";
 import { ref } from "vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
-const getPage = () => {
 
-}
+const getPage = () => {};
 // get posts
 let postsAll = theme.value.posts || [];
 // get postLength
@@ -163,9 +162,15 @@ const transDate = (date) => {
     flex-wrap: wrap;
     justify-content: space-between;
     .blog-item {
+      width: 32%;
       margin: 1rem 0;
       display: block;
       cursor: pointer;
+    }
+    @media (max-width: 1000px) {
+      .blog-item {
+        width: 100%;
+      }
     }
     .blog-item:hover {
       text-decoration: none;

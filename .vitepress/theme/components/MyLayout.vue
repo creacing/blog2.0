@@ -56,8 +56,8 @@ const scrollTop = () => {
   top: 0;
   left: 0;
   width: 100%;
-  // height: 100vh;
-  height: 60rem;
+  height: 100vh;
+  //   height: 60rem;
   background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
   background-clip: text;
 }

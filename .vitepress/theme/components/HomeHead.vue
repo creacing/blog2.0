@@ -25,38 +25,43 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-const myMotto = ref('')
+import { ref } from "vue";
+const myMotto = ref("");
 
 const showMotto = () => {
-  const mottoList = ['The quieter you become, the more you are able to hear.', '宁静致远']
+  const mottoList = [
+    "The quieter you become, the more you are able to hear.",
+    "宁静致远",
+  ];
   let timer = null,
-    count = 1, reverseFlag = false, currentMotto = 0
-  const mottoListLen = mottoList.length
+    count = 1,
+    reverseFlag = false,
+    currentMotto = 0;
+  const mottoListLen = mottoList.length;
 
   timer = setInterval(() => {
-    const motto = mottoList[currentMotto]
-    const mottoLen = motto.length
-    myMotto.value = motto.slice(0, count)
+    const motto = mottoList[currentMotto];
+    const mottoLen = motto.length;
+    myMotto.value = motto.slice(0, count);
 
-    count === mottoLen ? reverseFlag = true : null
+    count === mottoLen ? (reverseFlag = true) : null;
 
     if (count === 0) {
-      reverseFlag = false
-      currentMotto++
+      reverseFlag = false;
+      currentMotto++;
 
       if (currentMotto === mottoListLen) {
-        currentMotto = 0
+        currentMotto = 0;
       }
     }
 
-    !reverseFlag ? count++ : count--
-  }, 200)
-}
-showMotto()
+    !reverseFlag ? count++ : count--;
+  }, 200);
+};
+showMotto();
 
 const goDown = () => {
-  document.documentElement.scrollTop = window.innerHeight
+  document.documentElement.scrollTop = window.innerHeight;
 };
 
 const platforms = [
@@ -82,13 +87,15 @@ const go = (platform) => {
 </script>
 <style lang='scss' scoped>
 .my-card {
-  // height: 100vh;
-  height: 58rem;
+  min-height: 100vh;
+  //   height: 58rem;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   .my-info {
+    height: 100vh;
     min-width: 60%;
     .my-motto {
       color: #fff;

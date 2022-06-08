@@ -33,19 +33,36 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps, toRefs } from "vue";
+const props = defineProps({
+  cardValue: {
+    type: Object,
+    default() {
+      return {
+        title: "",
+        items: [],
+      };
+    },
+  },
+});
+const { cardValue } = props;
+// console.log("cardValue.value", cardValue.frontMatter);
+const values = cardValue.frontMatter;
 const demoArticle = {
-  title: '手把手带你用 SSRF 打穿内网',
-  bg: '',
-  intro: 'SSRF 以前没有单独总结过相关的姿势点，去年的时候国光就已经写了一大半了，但是后面由于经常赶项目的原因，所以这篇文章就拖延到今天',
-  type: ['web', 'vue', 'js'], //类型 大概类
-  tag: ['http', 'xss'], // 细分
-  time: '2021-1-1'
-}
+  title: values.title,
+  bg: "",
+  intro: values.description,
+  type: values.tags, //类型 大概类
+  tag: values.tags, // 细分
+  time: values.date,
+};
 </script>
 <style lang='scss' scoped>
+.card {
+  width: 100%;
+}
 .card-body {
-  animation: smallToLarge 2s;
+  animation: smallToLarge 1s;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -108,9 +125,9 @@ const demoArticle = {
       display: flex;
       .card-tag {
         border-radius: 10px;
-        padding: 2px 0;
+        padding: 4px 6px;
         background-color: rgb(221, 217, 217);
-        width: 3rem;
+        // width: 3rem;
         text-align: center;
         line-height: 1rem;
         margin: 0 1px;
@@ -121,21 +138,32 @@ const demoArticle = {
 @media (min-width: 1000px) {
   .card-body {
     height: 25rem;
-    width: 22rem;
+    // width: 22rem;
   }
 }
 .card-body:hover {
-  padding: 5px;
+  animation: smallToLarge2 1s;
 }
 @keyframes smallToLarge {
   /*这个就是要执行的动画*/
   from {
-    transform: scale(0);
+    transform: scale(0.9);
   }
 
   /*从它到它，scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数，这个是css3中2D的转换方法。*/
   to {
     transform: scale(1);
+  }
+}
+@keyframes smallToLarge2 {
+  /*这个就是要执行的动画*/
+  from {
+    transform: scale(1);
+  }
+
+  /*从它到它，scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数，这个是css3中2D的转换方法。*/
+  to {
+    transform: scale(1.1);
   }
 }
 </style>
