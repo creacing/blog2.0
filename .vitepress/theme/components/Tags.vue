@@ -1,6 +1,10 @@
 <template>
+    <h1 class="tags-header">文章分类</h1>
+  <div class="bg-cover">
+    <Motto />
+  </div>
+
   <div class="my-tags">
-    <h1 class="tags-header">标签</h1>
     <div class="tags">
       <span
         @click="toggleTag(key)"
@@ -47,7 +51,8 @@
     </a>
   </div>
 </template>
-<script lang="ts" setup>
+<script  setup>
+import Motto from './Motto.vue'
 import { computed, ref, onMounted } from "vue";
 import { useData, withBase } from "vitepress";
 import { initTags } from "../utils";
@@ -56,30 +61,37 @@ const { theme } = useData();
 const data = computed(() => initTags(theme.value.posts));
 
 //ooo 给tags设置默认值
-const selectTagDefault: string = Object.keys(data.value)[0];
+const selectTagDefault = Object.keys(data.value)[0];
 let selectTag = ref("");
 selectTag.value = selectTagDefault;
 
-const toggleTag = (tag: string) => {
+const toggleTag = (tag) => {
   selectTag.value = tag;
 };
 
 // set font-size
-const getFontSize = (length: number) => {
+const getFontSize = (length) => {
   let size = length * 0.04 + 0.85;
   return { fontSize: `${size}em` };
 };
 </script>
 
-<style scoped>
-.my-tags {
-  /* color: rgb(62, 62, 95); */
-  /* min-height: 100vh;
+<style lang='scss' scoped>
+.bg-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.4); */
-  /* border-radius: 10px; */
-  /* box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4); */
-  /* border: 1px solid rgba(255, 255, 255, 0.4); */
+  z-index: -1;
+  height: 45vh;
+  background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
+  background-clip: text;
+}
+.my-tags{
+  margin-top: 25vh;
 }
 .tags-header {
   font-weight: bold;

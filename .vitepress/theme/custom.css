@@ -199,31 +199,6 @@ header {
   padding: 0 2rem;
 }
 
-/* .nav-bar>.nav {
-  height: 60px !important;
-  display: flex;
-  align-items: center;
-} */
-
-/* .nav-bar>.nav>.nav-links {
-  padding: 0;
-  height: 100%;
-} */
-
-/* .nav-bar>.nav>.nav-links>.item {
-  display: flex;
-  align-items: center;
-  height: 100%;
-} */
-
-/* .nav-bar>.nav>.nav-links>.item>.nav-link>.item {
-  color: mediumpurple !important;
-} */
-
-/* .nav-bar-title {
-  color: mediumpurple !important;
-} */
-
 .page {
   overflow: auto;
 }
