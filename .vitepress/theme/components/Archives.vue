@@ -44,7 +44,7 @@
 </template>
 
 <script  setup>
-import Motto from './Motto.vue'
+import Motto from "./Motto.vue";
 import { useData, withBase } from "vitepress";
 import { computed, onMounted, ref } from "vue";
 import { useYearSort } from "../utils";
@@ -104,6 +104,11 @@ const yearClick = (index) => {
       color: rbaa(255, 255, 255, 1);
       background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
       width: 5rem;
+      height: 5rem;
+      border-radius: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .year-num {
       color: var(--c-brand);

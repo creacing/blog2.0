@@ -202,7 +202,7 @@ const transDate = (date) => {
   background-clip: text;
 }
 .recommend {
-  width: 60%;
+  width: 55%;
   margin: 0 1rem;
 }
 @media (max-width: 1000px) {
@@ -218,8 +218,7 @@ const transDate = (date) => {
   align-items: center;
   .blog-bg {
     display: flex;
-    // max-width: 70rem;
-    width: 60%;
+    width: 55%;
     flex-wrap: wrap;
     justify-content: space-between;
     .blog-item {

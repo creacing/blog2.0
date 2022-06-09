@@ -143,6 +143,7 @@ const demoArticle = {
 }
 .card-body:hover {
   animation: smallToLarge2 1s;
+  animation-direction: alternate;
 }
 @keyframes smallToLarge {
   /*这个就是要执行的动画*/

@@ -2,7 +2,9 @@
   <div style="position: relative">
     <div :class="showNavCover ? 'nav-cover' : ''"></div>
     <Layout>
-      <template #navbar-search></template>
+      <template #navbar-search>
+        <Search />
+      </template>
       <template #page-top class="page-top">
         <Title v-if="isPost" />
         <Category v-if="isPost" />
@@ -16,6 +18,7 @@
   </div>
 </template>
 <script setup>
+import Search from "./Search.vue";
 import DefaultTheme from "vitepress/theme";
 const { Layout } = DefaultTheme;
 import Recommend from "./Recommend.vue";
