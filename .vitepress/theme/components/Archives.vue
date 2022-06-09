@@ -86,17 +86,23 @@ const yearClick = (index) => {
     height: 2.5rem;
     line-height: 2.5rem;
     .year-name {
-      padding: 0.2rem 0;
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--c-color);
+      color: rgb(176, 166, 165);
       width: 5rem;
+      height: 5rem;
+      border-radius: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(249, 235, 234);
     }
     .year-nameActive {
       padding: 0.2rem 0;
       font-size: 1.3rem;
       font-weight: 600;
-      color: var(--c-brand);
+      color: rbaa(255, 255, 255, 1);
+      background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
       width: 5rem;
     }
     .year-num {
@@ -116,17 +122,21 @@ const yearClick = (index) => {
   margin-top: 25vh;
   .archives-years {
     display: flex;
-    justify-content: center;
-    background-color: rgba($color: #fff, $alpha: 0.3);
+    justify-content: flex-start;
+    // background-color: rgba($color: #fff, $alpha: 0.3);
     width: 100%;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
+    // border-radius: 1rem;
+    margin-bottom: 1rem;
+
+    // box-shadow: 2px 2px 10px 2px rgba($color: #000, $alpha: 0.1);
   }
   .archives-content {
+    box-shadow: 2px 2px 10px 2px rgba($color: #000, $alpha: 0.1);
     background-color: rgba($color: #fff, $alpha: 1);
     width: 100%;
     border-radius: 1rem;
     padding: 5px 10px;
+    padding-top: 15px;
     .archives-article {
       width: 100%;
       display: flex;
@@ -143,10 +153,11 @@ const yearClick = (index) => {
         align-items: center;
         justify-content: space-between;
         margin: 10px 10px;
-        color: #000;
+        color: rgba(89, 189, 238, 1);
         font-weight: 600;
         transition: border 0.3s ease, color 0.3s ease;
         .date {
+          color: rgba(18, 161, 231, 1);
           font-family: Georgia, sans-serif;
         }
       }
