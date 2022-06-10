@@ -55,6 +55,7 @@ const scrollTop = () => {
   left: 0;
   width: 100%;
   box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 .bg-cover {
   position: absolute;
@@ -68,10 +69,6 @@ const scrollTop = () => {
 }
 
 .article-top {
-  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 1rem;
 }
 .bg-cover-article {
   flex-direction: column;
