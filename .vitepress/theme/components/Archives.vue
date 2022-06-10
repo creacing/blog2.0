@@ -111,14 +111,14 @@ const yearClick = (index) => {
       align-items: center;
     }
     .year-num {
-      color: var(--c-brand);
+      color: var(--c-blue);
       font-size: 12px !important;
       position: relative;
       top: -8px;
     }
   }
   .year :hover {
-    color: var(--c-brand);
+    color: var(--c-blue);
   }
 }
 
@@ -168,7 +168,7 @@ const yearClick = (index) => {
       }
       .article:hover {
         text-decoration: none;
-        color: var(--c-brand);
+        color: var(--c-blue);
       }
     }
   }

@@ -4,12 +4,13 @@ import Tags from "./components/Tags.vue";
 import About from "./components/About.vue";
 import MyLayout from "./components/MyLayout.vue";
 import "./custom.css";
-
+import "./variable.scss"
 export default {
   ...DefaultTheme,
   Layout: MyLayout,
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp ({ app, router, siteData }) {
     // register global components
+    //注册全局组件
     app.component("Archives", Archives);
     app.component("Tags", Tags);
     app.component("About", About);
@@ -19,4 +20,3 @@ export default {
   },
 };
 
-//注册全局组件

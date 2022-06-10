@@ -5,9 +5,12 @@
       <template #navbar-search>
         <Search />
       </template>
-      <template #page-top class="page-top">
-        <Title v-if="isPost" />
-        <Category v-if="isPost" />
+      <template #page-top>
+        <div class="bg-cover-article"></div>
+        <div class="article-top" v-if="isPost">
+          <Title />
+          <Category />
+        </div>
       </template>
       <template #page-bottom> </template>
       <!-- Home slot-->
@@ -18,9 +21,9 @@
   </div>
 </template>
 <script setup>
-import Search from "./Search.vue";
 import DefaultTheme from "vitepress/theme";
 const { Layout } = DefaultTheme;
+import Search from "./Search.vue";
 import Recommend from "./Recommend.vue";
 import CopyWright from "./CopyWright.vue";
 import Card from "./Card.vue";
@@ -38,7 +41,7 @@ onMounted(() => {
   // 监听滚动条位置
   window.addEventListener("scroll", scrollTop, true);
 });
-// 实时滚动条高度
+// 实时滚动条高度 控制 导航栏的样式
 const scrollTop = () => {
   let scroll = document.documentElement.scrollTop || document.body.scrollTop;
   scroll > 0 ? (showNavCover.value = true) : (showNavCover.value = false);
@@ -61,6 +64,27 @@ const scrollTop = () => {
   height: 100vh;
   //   height: 60rem;
   background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
+  background-clip: text;
+}
+
+.article-top {
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.bg-cover-article {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 45vh;
+  background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   background-clip: text;
 }
 </style>

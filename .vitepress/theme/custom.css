@@ -1,13 +1,4 @@
 /* .vitepress/theme/custom.css */
-
-:root {
-  --c-brand: #646cff;
-  --c-brand-light: #747bff;
-  --c-hover: #212121;
-  --c-bg: unset;
-  --c-color: #000000;
-}
-
 #app {
   min-height: 100vh;
   position: relative;
@@ -16,7 +7,7 @@
 h2,
 h3,
 p {
-  color: var(--c-color);
+  color: var(--c-black);
 }
 
 .page,
@@ -26,7 +17,7 @@ p {
 }
 
 .theme {
-  background-color: var(--c-bg);
+  background-color: var(--unset-bg);
 }
 
 header {
