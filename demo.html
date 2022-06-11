@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <style>
+        .foo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+        
+        @keyframes largeToSmall {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="foo">
+
+    </div>
+</body>
+<script>
+    const foo = document.getElementsByClassName('foo')[0]
+    foo.style.animation = "largeToSmall 1s forwards"
+</script>
+
+</html>

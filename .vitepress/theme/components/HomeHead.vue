@@ -29,10 +29,7 @@ import { ref } from "vue";
 const myMotto = ref("");
 
 const showMotto = () => {
-  const mottoList = [
-    "The quieter you become, the more you are able to hear.",
-    "宁静致远",
-  ];
+  const mottoList = ["Practice makes perfect.", "Its my pleasure."];
   let timer = null,
     count = 1,
     reverseFlag = false,

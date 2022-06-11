@@ -1,36 +1,38 @@
 <template>
-  <div class="bg-cover">
-    <h1 class="tags-header">文章分类</h1>
-    <Motto />
-  </div>
-
-  <div class="my-tags">
-    <div class="tags">
-      <div
-        v-for="(item, key, index) in data"
-        :key="item"
-        :style="[{ background: colorList[index] }]"
-        style="opacity: 0.7"
-      >
-        <span
-          @click="toggleTag(key)"
-          class="tag"
-          :style="getFontSize(data[key].length)"
-          :class="{ activetag: selectTag === key }"
-        >
-          {{ key }}
-          <span class="tag-length">{{ data[key].length }}</span>
-        </span>
-      </div>
+  <div>
+    <div class="bg-cover">
+      <h1 class="tags-header">文章分类</h1>
+      <Motto />
     </div>
-    <div class="tags-content">
-      <div v-for="(article, index) in data[selectTag]" :key="index">
-        <a :href="withBase(article.regularPath)" class="article">
-          <div class="title">
-            {{ article.frontMatter.title }}
-          </div>
-          <div class="date">{{ article.frontMatter.date }}</div>
-        </a>
+
+    <div class="my-tags">
+      <div class="tags">
+        <div
+          v-for="(item, key, index) in data"
+          :key="item"
+          :style="[{ background: colorList[index] }]"
+          style="opacity: 0.7"
+        >
+          <span
+            @click="toggleTag(key)"
+            class="tag"
+            :style="getFontSize(data[key].length)"
+            :class="{ activetag: selectTag === key }"
+          >
+            {{ key }}
+            <span class="tag-length">{{ data[key].length }}</span>
+          </span>
+        </div>
+      </div>
+      <div class="tags-content">
+        <div v-for="(article, index) in data[selectTag]" :key="index">
+          <a :href="withBase(article.regularPath)" class="article">
+            <div class="title">
+              {{ article.frontMatter.title }}
+            </div>
+            <div class="date">{{ article.frontMatter.date }}</div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -157,7 +159,6 @@ const getFontSize = (length) => {
   background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   background-clip: text;
   .tags-header {
-    margin-top: -10rem;
     font-weight: bold;
     padding-bottom: 14px;
   }

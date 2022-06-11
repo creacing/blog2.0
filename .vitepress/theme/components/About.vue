@@ -6,9 +6,9 @@
   <div class="about-card-content"></div>
 </template>
 <script setup>
-import Motto from './Motto.vue'
-import { ref } from 'vue'
-let author = ref('ooo')
+import Motto from "./Motto.vue";
+import { ref } from "vue";
+let author = ref("ooo");
 </script>
 <style lang='scss' scoped>
 .bg-cover {
@@ -25,7 +25,6 @@ let author = ref('ooo')
   background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   background-clip: text;
   .tags-header {
-    margin-top: -10rem;
     font-weight: bold;
     padding-bottom: 14px;
   }
@@ -49,7 +48,6 @@ let author = ref('ooo')
   position: absolute;
   height: 4rem;
   width: 4rem;
-  z-index: 1000;
   border-radius: 4rem;
 }
 </style>

@@ -33,7 +33,30 @@
   </div>
 </template>
 <script setup>
-import { ref, toRefs } from "vue";
+import { ref, toRefs, onMounted, onUnmounted, watch } from "vue";
+
+const checkScrollHeightAndLoadAnimation = () => {
+  const windowHeight = window.innerHeight;
+  const cardBodys = document.getElementsByClassName("card-body");
+  //窗口的高度加上滚动条的高度与 cardBody 到页面顶部的距离
+  for (const cardBody of cardBodys) {
+    if (window.pageYOffset + windowHeight > cardBody.offsetTop) {
+      cardBody.style.animation = "smallToLarge 2s forwards"; //添加动画
+    } else {
+      cardBody.style.animation = "";
+    }
+  }
+};
+const bindHandleScroll = () => {
+  checkScrollHeightAndLoadAnimation();
+};
+onMounted(() => {
+  checkScrollHeightAndLoadAnimation();
+  window.addEventListener("scroll", bindHandleScroll);
+});
+onUnmounted(() => {
+  window.removeEventListener("scroll", bindHandleScroll);
+});
 const props = defineProps({
   cardValue: {
     type: Object,
@@ -57,12 +80,11 @@ const demoArticle = {
   time: values.date,
 };
 </script>
-<style lang='scss' scoped>
+<style lang='scss' scope>
 .card {
   width: 100%;
 }
 .card-body {
-  animation: smallToLarge 1s;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -127,7 +149,6 @@ const demoArticle = {
         border-radius: 10px;
         padding: 4px 6px;
         background-color: rgb(127, 189, 255);
-        // width: 3rem;
         text-align: center;
         line-height: 1rem;
         margin: 0 1px;
@@ -138,33 +159,34 @@ const demoArticle = {
 @media (min-width: 1000px) {
   .card-body {
     height: 25rem;
-    // width: 22rem;
   }
 }
-.card-body:hover {
-  animation: smallToLarge2 1s;
+.card:hover {
+  border-radius: 5px;
+  animation: smallToLargeHover 0.5s;
   animation-direction: alternate;
+}
+</style>
+
+<style lang='scss'>
+@keyframes smallToLargeHover {
+  /*这个就是要执行的动画*/
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 @keyframes smallToLarge {
   /*这个就是要执行的动画*/
   from {
-    transform: scale(1.1);
+    transform: scale(0.5);
   }
 
   /*从它到它，scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数，这个是css3中2D的转换方法。*/
   to {
     transform: scale(1);
-  }
-}
-@keyframes smallToLarge2 {
-  /*这个就是要执行的动画*/
-  from {
-    transform: scale(1);
-  }
-
-  /*从它到它，scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数，这个是css3中2D的转换方法。*/
-  to {
-    transform: scale(1.1);
   }
 }
 </style>

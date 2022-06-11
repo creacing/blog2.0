@@ -3,8 +3,8 @@ import { getPosts, getPostLength } from "./theme/serverUtils";
 async function config() {
     return {
         lang: "zh-CN",
-        title: "ooo",
-        description: "ooo blog",
+        title: "七夜的许愿星",
+        description: "七夜的许愿星的博客",
         head: [
             [
                 "link",
@@ -49,8 +49,7 @@ async function config() {
             //   apiKey: "90a0bae6ff7307fb76896cbe2f975b0c",
             //   indexName: "clark-cui-docs",
             // },
-            nav: [
-                {
+            nav: [{
                     // logo: '/home.svg',
                     text: '首页',
                     link: "/",
