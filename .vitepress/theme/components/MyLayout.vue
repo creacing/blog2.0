@@ -2,7 +2,8 @@
   <div style="position: relative">
     <div :class="showNavCover ? 'nav-cover' : ''"></div>
     <Layout>
-      <template #navbar-search>
+      <template #navbar-search class="my-nav">
+        <MyNav />
         <Search />
       </template>
       <template #page-top>
@@ -23,6 +24,7 @@
 <script setup>
 import DefaultTheme from "vitepress/theme";
 const { Layout } = DefaultTheme;
+import MyNav from "./MyNav.vue";
 import Search from "./Search.vue";
 import Recommend from "./Recommend.vue";
 import CopyWright from "./CopyWright.vue";
@@ -48,6 +50,9 @@ const scrollTop = () => {
 };
 </script>
 <style lang='scss' scoped>
+.my-nav {
+  display: flex;
+}
 .nav-cover {
   position: fixed;
   height: 60px;

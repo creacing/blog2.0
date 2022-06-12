@@ -164,7 +164,7 @@ const demoArticle = {
 .card:hover {
   border-radius: 5px;
   animation: smallToLargeHover 0.5s;
-  animation-direction: alternate;
+  //   animation-direction: alternate;
 }
 </style>
 
