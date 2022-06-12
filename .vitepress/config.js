@@ -49,24 +49,24 @@ async function config() {
             //   apiKey: "90a0bae6ff7307fb76896cbe2f975b0c",
             //   indexName: "clark-cui-docs",
             // },
-            nav: [{
-                    // logo: '/home.svg',
-                    text: '首页',
-                    link: "/",
-                },
-                {
-                    text: "文章",
-                    link: "/archives",
-                },
-                {
-                    text: "分类",
-                    link: "/tags",
-                },
-                {
-                    text: "关于",
-                    link: "/about",
-                },
-            ],
+            // nav: [{
+            //         // logo: '/home.svg',
+            //         text: '首页',
+            //         link: "/",
+            //     },
+            //     {
+            //         text: "文章",
+            //         link: "/archives",
+            //     },
+            //     {
+            //         text: "分类",
+            //         link: "/tags",
+            //     },
+            //     {
+            //         text: "关于",
+            //         link: "/about",
+            //     },
+            // ],
             //这里插入的是Emoji图片
             //侧边栏
             // sidebar: {

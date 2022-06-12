@@ -1,0 +1,193 @@
+/* .vitepress/theme/custom.css */
+
+#app {
+    min-height: 100vh;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+    color: var(--c-black);
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    list-style: 0;
+}
+
+.page,
+.home {
+    background: rgba(255, 255, 255, 0.3);
+    min-height: 100vh
+}
+
+.theme {
+    background-color: var(--unset-bg);
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* yj 导航栏背景色*/
+
+.nav-bar {
+    width: 60%;
+    position: fixed;
+    left: 50% !important;
+    top: 0;
+    transform: translateX(-50%);
+    border-bottom: unset !important;
+    background-color: var(--unset-bg) !important;
+    z-index: 2;
+}
+
+// .nav-links .item .nav-link .item {
+//     color: #fff !important;
+//     font-size: 0.7rem;
+// }
+//用户名
+.nav-bar-title {
+    color: #fff !important;
+    font-size: 1.5rem;
+}
+
+// .nav-links .item .nav-link {
+//     position: relative;
+//     margin-right: 2rem;
+// }
+// .nav-links>.item:nth-child(1)>.nav-link>.item::before {
+//     content: '';
+//     background-image: url(/home.svg);
+//     position: absolute;
+//     left: -25px;
+//     top: 5px;
+//     width: 1rem;
+//     height: 1rem;
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+// }
+// .nav-links>.item:nth-child(2)>.nav-link>.item::before {
+//     content: '';
+//     background-image: url(/article.svg);
+//     position: absolute;
+//     left: -25px;
+//     top: 5px;
+//     width: 1rem;
+//     height: 1rem;
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+// }
+// .nav-links>.item:nth-child(3)>.nav-link>.item::before {
+//     content: '';
+//     background-image: url(/tag.svg);
+//     position: absolute;
+//     left: -25px;
+//     top: 5px;
+//     width: 1rem;
+//     height: 1rem;
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+// }
+// .nav-links>.item:nth-child(4)>.nav-link>.item::before {
+//     content: '';
+//     background-image: url(/about.svg);
+//     position: absolute;
+//     left: -25px;
+//     top: 5px;
+//     width: 1rem;
+//     height: 1rem;
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+// }
+// .nav-links>.item:nth-child(5)>.nav-link>.item::before {
+//     content: '';
+//     background-image: url(/search.svg);
+//     position: absolute;
+//     left: -25px;
+//     top: 5px;
+//     width: 1rem;
+//     height: 1rem;
+//     background-repeat: no-repeat;
+//     background-size: 100% 100%;
+// }
+@media (max-width: 900px) {
+    .nav-bar {
+        width: 100%;
+    }
+}
+
+// .nav-links>.item>.nav-link>.item::after {
+//     content: '';
+//     position: absolute;
+//     width: 80px;
+//     height: 60px;
+//     left: -35px;
+//     top: -15px;
+//     z-index: -1;
+// }
+// .nav-links>.item>.nav-link>.item:hover::after {
+//     background-color: rgba(255, 255, 255, 0.2);
+// }
+// @media (max-width: 700px) {
+//     .nav-links>.item:nth-child(1)>.nav-link>.item::before {
+//         top: 10px;
+//         left: 5px;
+//     }
+//     .nav-links>.item:nth-child(2)>.nav-link>.item::before {
+//         top: 10px;
+//         left: 5px;
+//     }
+//     .nav-links>.item:nth-child(3)>.nav-link>.item::before {
+//         top: 10px;
+//         left: 5px;
+//     }
+//     .nav-links>.item:nth-child(4)>.nav-link>.item::before {
+//         top: 10px;
+//         left: 5px;
+//     }
+//     .nav-links>.item:nth-child(5)>.nav-link>.item::before {
+//         top: 10px;
+//         left: 5px;
+//     }
+// }
+
+/* 滚动条的宽度 */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+
+/* 滚动条的按钮 */
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+
+/* 滚动条的滑块 */
+
+::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 5px;
+}
+
+.nav-bar>.nav {
+    padding: 0 2rem;
+}
+
+.nav-bar>.nav {
+    padding: 0 2rem;
+}
+
+.page {
+    overflow: auto;
+}

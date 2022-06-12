@@ -100,12 +100,12 @@ onBeforeMount(() => {
 }
 /* 搜索图标 */
 .search-btn {
-  width: 1rem;
+  width: 1.5rem;
   z-index: 1000;
   /* 搜索图标与左侧距离 */
-  margin-left: -30px;
+  margin-left: 4rem;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: 2px;
 }
 .search-dialog {
   width: 90vw;
