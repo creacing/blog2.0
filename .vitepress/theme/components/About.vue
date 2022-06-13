@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-cover">
+  <div class="bg-cover flexXY flexCol absolute">
     <h1 class="tags-header">欢迎来到 {{ author }} 的个人小站</h1>
     <Motto />
   </div>
@@ -7,16 +7,15 @@
 </template>
 <script setup>
 import Motto from "./Motto.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 let author = ref("ooo");
+onMounted(()=>{
+  const content = document.getElementsByClassName('content')[0]
+  content.style.position = 'unset'
+})
 </script>
 <style lang='scss' scoped>
 .bg-cover {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

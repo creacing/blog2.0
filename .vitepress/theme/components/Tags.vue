@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="bg-cover">
-      <h1 class="tags-header">文章分类</h1>
+    <div class="bg-cover flexXY flexCol absolute">
+      <h1 class="tags-header">文笔标签</h1>
       <Motto />
     </div>
 
@@ -42,6 +42,10 @@ import Motto from "./Motto.vue";
 import { computed, ref, onMounted } from "vue";
 import { useData, withBase } from "vitepress";
 import { initTags } from "../utils";
+onMounted(()=>{
+  const content = document.getElementsByClassName('content')[0]
+  content.style.position = 'unset'
+})
 //颜色列表
 const colorList = [
   "#ff9804",
@@ -146,11 +150,6 @@ const getFontSize = (length) => {
   border-radius: 1rem;
 }
 .bg-cover {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

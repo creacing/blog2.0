@@ -86,7 +86,7 @@ const scrollTop = () => {
   width: 100%;
   z-index: -1;
   height: 45vh;
-  background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
+  // background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   background-clip: text;
 }
 </style>

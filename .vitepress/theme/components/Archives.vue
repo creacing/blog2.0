@@ -1,43 +1,44 @@
 <template>
-  <div>
-    <div class="bg-cover">
-      <Motto />
+  <div class="bg-cover flexXY flexCol absolute">
+    <Motto />
+  </div>
+  <div class="archives">
+    <div class="calender bg-white-shadow p-5">
+      <Calender style="height: 200px; width: 100%" />
     </div>
-    <div class="archives">
-      <div class="archives-years">
-        <div class="years">
+    <div class="archives-years">
+      <div class="years">
+        <div
+          v-for="(yearList, index) in data"
+          :key="yearList"
+          class="year"
+          @click="yearClick(index)"
+        >
           <div
-            v-for="(yearList, index) in data"
-            :key="yearList"
-            class="year"
-            @click="yearClick(index)"
+            :class="yearColorFlag === index ? 'year-nameActive' : 'year-name'"
+            @click="showArchivesByYear(index)"
           >
-            <div
-              :class="yearColorFlag === index ? 'year-nameActive' : 'year-name'"
-              @click="showArchivesByYear(index)"
-            >
-              {{ yearList[0].frontMatter.date.split("-")[0] }}
-              <span class="year-num">{{ yearList.length }}</span>
-            </div>
+            {{ yearList[0].frontMatter.date.split("-")[0] }}
+            <span class="year-num">{{ yearList.length }}</span>
           </div>
         </div>
       </div>
-      <div class="archives-content">
-        <div
-          class="archives-article"
-          v-for="(article, index) in year_archives"
-          :key="index"
-        >
-          <a :href="withBase(article.regularPath)" class="article">
-            <div class="title">
-              <div class="title-o"></div>
-              {{ article.frontMatter.title }}
-            </div>
-            <div class="date">
-              {{ article.frontMatter.date.slice(5) }}
-            </div>
-          </a>
-        </div>
+    </div>
+    <div class="archives-content">
+      <div
+        class="archives-article"
+        v-for="(article, index) in year_archives"
+        :key="index"
+      >
+        <a :href="withBase(article.regularPath)" class="article">
+          <div class="title">
+            <div class="title-o"></div>
+            {{ article.frontMatter.title }}
+          </div>
+          <div class="date">
+            {{ article.frontMatter.date.slice(5) }}
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -45,6 +46,7 @@
 
 <script  setup>
 import Motto from "./Motto.vue";
+import Calender from './Calender.vue'
 import { useData, withBase } from "vitepress";
 import { computed, onMounted, ref } from "vue";
 import { useYearSort } from "../utils";
@@ -52,6 +54,9 @@ const { theme } = useData();
 const data = computed(() => useYearSort(theme.value.posts));
 const year_archives = ref([]);
 onMounted(() => {
+  const content = document.getElementsByClassName('content')[0]
+  content.style.position = 'unset'
+
   year_archives.value = data.value[0];
 });
 const showArchivesByYear = (index) => {
@@ -65,10 +70,6 @@ const yearClick = (index) => {
 
 <style lang='scss' scoped>
 .bg-cover {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -125,6 +126,11 @@ const yearClick = (index) => {
 //yj
 .archives {
   margin-top: 25vh;
+  .calender {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+  }
   .archives-years {
     display: flex;
     justify-content: flex-start;

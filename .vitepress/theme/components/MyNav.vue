@@ -45,9 +45,9 @@ const navList = ref([
     pull: "0",
     pullSrc: pullDic[0],
     children: [
-      { id: "21", text: "标签", link: "/archives" },
-      { id: "22", text: "分类", link: "/archives" },
-      { id: "23", text: "归档", link: "/archives" },
+      { id: "21", text: "标签", link: "/archives", icon: "/tag.svg" },
+      { id: "22", text: "分类", link: "/archives", icon: "/tag.svg" },
+      { id: "23", text: "归档", link: "/archives", icon: "/tag.svg" },
     ],
   },
   {
@@ -58,9 +58,9 @@ const navList = ref([
     pull: "0",
     pullSrc: pullDic[0],
     children: [
-      { id: "21", text: "标签x", link: "/archives" },
-      { id: "22", text: "分类x", link: "/archives" },
-      { id: "23", text: "归档x", link: "/archives" },
+      { id: "31", text: "标签x", link: "/archives", icon: "/tag.svg" },
+      { id: "32", text: "分类x", link: "/archives", icon: "/tag.svg" },
+      { id: "33", text: "归档x", link: "/archives", icon: "/tag.svg" },
     ],
   },
   {
@@ -154,7 +154,7 @@ const mouseleave = (nav) => {
     background-color: rgba($color: #fff, $alpha: 0.1);
   }
 }
-@media (max-height: 1000px) {
+@media (max-width: 1000px) {
   .my-nav-list {
     display: none;
   }

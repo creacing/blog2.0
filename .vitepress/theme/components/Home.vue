@@ -48,7 +48,7 @@ import HomeHead from "./HomeHead.vue";
 import { ref } from "vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
-const getPage = () => {};
+const getPage = () => { };
 // get posts
 let postsAll = theme.value.posts || [];
 // get postLength
