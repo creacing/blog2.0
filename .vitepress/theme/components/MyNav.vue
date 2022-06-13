@@ -45,9 +45,9 @@ const navList = ref([
     pull: "0",
     pullSrc: pullDic[0],
     children: [
-      { id: "21", text: "标签", link: "/archives", icon: "/tag.svg" },
-      { id: "22", text: "分类", link: "/archives", icon: "/tag.svg" },
-      { id: "23", text: "归档", link: "/archives", icon: "/tag.svg" },
+      //   { id: "21", text: "标签", link: "/tags", icon: "/labelBlack.svg" },
+      { id: "22", text: "分类", link: "/tags", icon: "/tagBlack.svg" },
+      { id: "23", text: "归档", link: "/archives", icon: "/fileBlack.svg" },
     ],
   },
   {
@@ -56,11 +56,13 @@ const navList = ref([
     link: "/tags",
     icon: "/tag.svg",
     pull: "0",
-    pullSrc: pullDic[0],
+    // pull: "0",
+    // pullSrc: pullDic[0],
+    pullSrc: "",
     children: [
-      { id: "31", text: "标签x", link: "/archives", icon: "/tag.svg" },
-      { id: "32", text: "分类x", link: "/archives", icon: "/tag.svg" },
-      { id: "33", text: "归档x", link: "/archives", icon: "/tag.svg" },
+      //   { id: "31", text: "标签x", link: "/archives", icon: "/tag.svg" },
+      //   { id: "32", text: "分类x", link: "/archives", icon: "/tag.svg" },
+      //   { id: "33", text: "归档x", link: "/archives", icon: "/tag.svg" },
     ],
   },
   {
@@ -154,7 +156,7 @@ const mouseleave = (nav) => {
     background-color: rgba($color: #fff, $alpha: 0.1);
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .my-nav-list {
     display: none;
   }

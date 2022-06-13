@@ -9,10 +9,10 @@
 import Motto from "./Motto.vue";
 import { ref, onMounted } from "vue";
 let author = ref("ooo");
-onMounted(()=>{
-  const content = document.getElementsByClassName('content')[0]
-  content.style.position = 'unset'
-})
+onMounted(() => {
+  const content = document.getElementsByClassName("content")[0];
+  content.style.position = "unset";
+});
 </script>
 <style lang='scss' scoped>
 .bg-cover {

@@ -5,13 +5,14 @@
       <Motto />
     </div>
 
-    <div class="my-tags">
+    <div class="my-tags bg-white-shadow p-10">
       <div class="tags">
         <div
           v-for="(item, key, index) in data"
           :key="item"
           :style="[{ background: colorList[index] }]"
-          style="opacity: 0.7"
+          style="opacity: 1; height: 2rem"
+          class="m-5 flexXY"
         >
           <span
             @click="toggleTag(key)"
@@ -42,10 +43,10 @@ import Motto from "./Motto.vue";
 import { computed, ref, onMounted } from "vue";
 import { useData, withBase } from "vitepress";
 import { initTags } from "../utils";
-onMounted(()=>{
-  const content = document.getElementsByClassName('content')[0]
-  content.style.position = 'unset'
-})
+onMounted(() => {
+  const content = document.getElementsByClassName("content")[0];
+  content.style.position = "unset";
+});
 //颜色列表
 const colorList = [
   "#ff9804",
@@ -144,10 +145,9 @@ const getFontSize = (length) => {
 
 <style lang='scss' scoped>
 .tags-content {
-  background-color: #fff;
-  box-shadow: 2px 2px 10px 2px rgba($color: #000000, $alpha: 0.3);
+  //   box-shadow: 2px 2px 10px 2px rgba($color: #000000, $alpha: 0.3);
   padding: 3rem;
-  border-radius: 1rem;
+  //   border-radius: 1rem;
 }
 .bg-cover {
   top: 0;
@@ -163,7 +163,10 @@ const getFontSize = (length) => {
   }
 }
 .my-tags {
-  margin-top: 20vh;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 25vh;
+  min-height: 1000px;
   .tags {
     margin-top: 14px;
     display: flex;
@@ -181,6 +184,7 @@ const getFontSize = (length) => {
       transition: 0.4s;
       color: #fff;
       cursor: pointer;
+      font-size: 1rem !important;
     }
     .tag:hover {
       color: mediumslateblue;

@@ -83,9 +83,13 @@ const demoArticle = {
 <style lang='scss' scope>
 .card {
   width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 }
 .card-body {
-  width: 100%;
+  width: 95%;
   display: flex;
   flex-direction: column;
 
