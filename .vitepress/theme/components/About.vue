@@ -6,9 +6,11 @@
   <div class="about-card-content"></div>
 </template>
 <script setup>
+import siteConfig from "./../siteConfig";
 import Motto from "./Motto.vue";
-import { ref, onMounted } from "vue";
-let author = ref("ooo");
+
+import { onMounted } from "vue";
+let author = siteConfig.author;
 onMounted(() => {
   const content = document.getElementsByClassName("content")[0];
   content.style.position = "unset";
@@ -34,7 +36,7 @@ onMounted(() => {
   min-height: 60vh;
   box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  margin-top: 25vh;
+  margin-top: 30vh;
   border-radius: 1rem;
 }
 .about-card-content::before {

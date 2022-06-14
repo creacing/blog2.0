@@ -6,8 +6,8 @@
     <div class="calender bg-white-shadow p-5">
       <Calender style="height: 200px; width: 100%" />
     </div>
-    <div class="archives-years">
-      <div class="years">
+    <div class="archives-years displayX">
+      <div class="years flex">
         <div
           v-for="(yearList, index) in data"
           :key="yearList"
@@ -19,14 +19,14 @@
             @click="showArchivesByYear(index)"
           >
             {{ yearList[0].frontMatter.date.split("-")[0] }}
-            <span class="year-num">{{ yearList.length }}</span>
+            <span class="year-num relative">{{ yearList.length }}</span>
           </div>
         </div>
       </div>
     </div>
     <div class="archives-content">
       <div
-        class="archives-article"
+        class="archives-article flexX"
         v-for="(article, index) in year_archives"
         :key="index"
       >
@@ -54,8 +54,13 @@ const { theme } = useData();
 const data = computed(() => useYearSort(theme.value.posts));
 const year_archives = ref([]);
 onMounted(() => {
+  //清除content的样式
   const content = document.getElementsByClassName('content')[0]
   content.style.position = 'unset'
+  // content.style.padding = 'unset'
+  // content.style['background-color'] = 'unset'
+  // content.style['box-shadow'] = 'unset'
+  // content.style. minHeight = 'unset'
 
   year_archives.value = data.value[0];
 });
@@ -80,7 +85,6 @@ const yearClick = (index) => {
 }
 
 .years {
-  display: flex;
   .year {
     margin: 0.2rem;
     padding: 0 0.2rem;
@@ -114,7 +118,6 @@ const yearClick = (index) => {
     .year-num {
       color: var(--c-blue);
       font-size: 12px !important;
-      position: relative;
       top: -8px;
     }
   }
@@ -132,14 +135,8 @@ const yearClick = (index) => {
     background-color: #fff;
   }
   .archives-years {
-    display: flex;
-    justify-content: flex-start;
-    // background-color: rgba($color: #fff, $alpha: 0.3);
     width: 100%;
-    // border-radius: 1rem;
     margin-bottom: 1rem;
-
-    // box-shadow: 2px 2px 10px 2px rgba($color: #000, $alpha: 0.1);
   }
   .archives-content {
     box-shadow: 2px 2px 10px 2px rgba($color: #000, $alpha: 0.1);
@@ -150,8 +147,6 @@ const yearClick = (index) => {
     padding-top: 15px;
     .archives-article {
       width: 100%;
-      display: flex;
-      justify-content: center;
       padding: 0.3rem;
       border-radius: 1rem;
       margin: 0.1rem 0;

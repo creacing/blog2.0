@@ -123,7 +123,6 @@ const colorList = [
 
 const { theme } = useData();
 const data = computed(() => initTags(theme.value.posts));
-console.log("dataxx", data);
 
 let articlesNum = theme.value.postLength;
 

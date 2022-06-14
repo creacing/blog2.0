@@ -25,57 +25,10 @@
 <script setup>
 import { ref } from "vue";
 import NavDialog from "./NavDialog.vue";
+import siteConfig from "./../siteConfig.js";
 //pull 0 有 向下, 1 有 向上, -1 没有
-const pullDic = { 0: "/navDown.svg", 1: "navUp.svg" };
-const navList = ref([
-  {
-    id: "1",
-    text: "首页",
-    link: "/",
-    icon: "/home.svg",
-    pull: "-1",
-    pullSrc: "",
-    children: [],
-  },
-  {
-    id: "2",
-    text: "文章",
-    link: "/archives",
-    icon: "/article.svg",
-    pull: "0",
-    pullSrc: pullDic[0],
-    children: [
-      //   { id: "21", text: "标签", link: "/tags", icon: "/labelBlack.svg" },
-      { id: "22", text: "分类", link: "/tags", icon: "/tagBlack.svg" },
-      { id: "23", text: "归档", link: "/archives", icon: "/fileBlack.svg" },
-    ],
-  },
-  {
-    id: "3",
-    text: "分类",
-    link: "/tags",
-    icon: "/tag.svg",
-    pull: "0",
-    // pull: "0",
-    // pullSrc: pullDic[0],
-    pullSrc: "",
-    children: [
-      //   { id: "31", text: "标签x", link: "/archives", icon: "/tag.svg" },
-      //   { id: "32", text: "分类x", link: "/archives", icon: "/tag.svg" },
-      //   { id: "33", text: "归档x", link: "/archives", icon: "/tag.svg" },
-    ],
-  },
-  {
-    id: "4",
-    text: "关于",
-    link: "/about",
-    icon: "/about.svg",
-    pull: "-1",
-    pullSrc: "",
-    children: [],
-  },
-  //   { text: "", link: "", icon: "/search.svg", child: [] },
-]);
+const navList = ref(siteConfig.navList);
+const pullDic = siteConfig.pullDic;
 let currentNavId = ref("");
 const mouseenter = (nav) => {
   if (nav.children.length > 0) {
@@ -123,7 +76,7 @@ const mouseleave = (nav) => {
       height: 1.5rem;
       display: flex;
       width: 5rem;
-      justify-content: space-between;
+      justify-content: flex-start;
       .my-nav-link {
         display: flex;
         justify-content: center;
@@ -136,19 +89,6 @@ const mouseleave = (nav) => {
         position: absolute;
         top: 3rem;
         left: -50%;
-      }
-      .my-nav-dialog::before {
-        content: "";
-        position: absolute;
-        // height: 15px;
-        // width: 15px;
-        // background-color: green;
-
-        top: -30px;
-        left: 50%;
-        border: 15px solid;
-        border-color: transparent transparent rgba($color: #fff, $alpha: 0.3);
-        transform: translateX(-50%);
       }
     }
   }

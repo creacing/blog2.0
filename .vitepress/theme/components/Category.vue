@@ -1,5 +1,5 @@
 <template>
-  <div class="category" v-if="headers.length > 0">
+  <div class="category bg-white-shadow" v-if="headers.length > 0">
     <ul>
       <li class="header" v-for="(item, index) in headers" :key="item">
         <a :href="`#${item.slug}`" class="header-h1" v-if="item.level === 2"
