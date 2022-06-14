@@ -4,7 +4,6 @@ import Tags from "./components/Tags.vue";
 import About from "./components/About.vue";
 import MyLayout from "./components/MyLayout.vue";
 import Type from './components/Type.vue'
-import "./siteConfig.js"
 import "./custom.scss";
 import "./variable.scss"
 export default {

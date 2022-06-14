@@ -3,7 +3,7 @@
     <div class="rec-path1">
       <div class="rec-title1">
         <img src="/light.svg" class="title1-img" alt="" />
-        <span><h1 class="title1-content">宁静致远</h1></span>
+        <span><h1 class="title1-content">熟能生巧</h1></span>
       </div>
     </div>
     <div class="rec-path2">

@@ -68,12 +68,8 @@ const scrollTop = () => {
   left: 0;
   width: 100%;
   height: 100vh;
-  //   height: 60rem;
   background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
   background-clip: text;
-}
-
-.article-top {
 }
 .bg-cover-article {
   flex-direction: column;
@@ -88,5 +84,12 @@ const scrollTop = () => {
   height: 45vh;
   // background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   background-clip: text;
+}
+
+:deep .content{
+  // padding: 10px;
+  // background-color: #fff;
+  // box-shadow: 2px 2px 10px 2px rgba($color: #000, $alpha: 0.3);
+  // min-height: 40rem;
 }
 </style>

@@ -1,5 +1,6 @@
 const siteConfig = {
-  nav:[]
+  nav: [],
+  author: ''
 }
 
 export default siteConfig

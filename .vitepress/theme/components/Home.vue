@@ -3,7 +3,7 @@
   <div>
     <Home-head />
     <div class="blog-list">
-      <Recommend class="recommend" />
+      <!-- <Recommend class="recommend" /> -->
       <div class="blog-bg">
         <a
           class="blog-item"
