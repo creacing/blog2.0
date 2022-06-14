@@ -1,25 +1,21 @@
 <template>
-  <div style="position: relative">
-    <div :class="showNavCover ? 'nav-cover' : ''"></div>
-    <Layout>
-      <template #navbar-search class="my-nav">
-        <MyNav />
-        <Search />
-      </template>
-      <template #page-top>
-        <div class="bg-cover-article"></div>
-        <div class="article-top" v-if="isPost">
-          <Title />
-          <Category />
-        </div>
-      </template>
-      <template #page-bottom> </template>
-      <!-- Home slot-->
-      <template #home-features> <home /></template>
-    </Layout>
-    <!-- copywright -->
-    <CopyWright />
-  </div>
+  <!-- 入口 -->
+  <div :class="showNavCover ? 'nav-cover' : ''"></div>
+  <Layout>
+    <template #navbar-search style="display: flex">
+      <MyNav />
+      <Search />
+    </template>
+    <template #page-top>
+      <div v-if="isPost">
+        <Title />
+        <Category />
+      </div>
+    </template>
+    <template #page-bottom> </template>
+    <template #home-features> <home /></template>
+  </Layout>
+  <CopyWright />
 </template>
 <script setup>
 import DefaultTheme from "vitepress/theme";
@@ -50,43 +46,16 @@ const scrollTop = () => {
 };
 </script>
 <style lang='scss' scoped>
-.my-nav {
-  display: flex;
-}
 .nav-cover {
   position: fixed;
-  height: 60px;
   top: 0;
   left: 0;
+  height: 60px;
   width: 100%;
   box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
-.bg-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
-  background-clip: text;
-}
-.bg-cover-article {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  height: 45vh;
-  // background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
-  background-clip: text;
-}
-
-:deep .content{
+:deep .content {
   // padding: 10px;
   // background-color: #fff;
   // box-shadow: 2px 2px 10px 2px rgba($color: #000, $alpha: 0.3);

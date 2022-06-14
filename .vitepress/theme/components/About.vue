@@ -35,7 +35,7 @@ onMounted(() => {
   min-height: 60vh;
   box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  margin-top: 25vh;
+  margin-top: 30vh;
   border-radius: 1rem;
 }
 .about-card-content::before {
