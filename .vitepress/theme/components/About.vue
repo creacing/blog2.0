@@ -8,7 +8,6 @@
 <script setup>
 import siteConfig from "./../siteConfig";
 import Motto from "./Motto.vue";
-
 import { onMounted } from "vue";
 let author = siteConfig.author;
 onMounted(() => {
