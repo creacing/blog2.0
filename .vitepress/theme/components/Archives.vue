@@ -46,7 +46,7 @@
 
 <script  setup>
 import Motto from "./Motto.vue";
-import Calender from './Calender.vue'
+import Calender from "./Calender.vue";
 import { useData, withBase } from "vitepress";
 import { computed, onMounted, ref } from "vue";
 import { useYearSort } from "../utils";
@@ -55,13 +55,8 @@ const data = computed(() => useYearSort(theme.value.posts));
 const year_archives = ref([]);
 onMounted(() => {
   //清除content的样式
-  const content = document.getElementsByClassName('content')[0]
-  content.style.position = 'unset'
-  // content.style.padding = 'unset'
-  // content.style['background-color'] = 'unset'
-  // content.style['box-shadow'] = 'unset'
-  // content.style. minHeight = 'unset'
-
+  const content = document.getElementsByClassName("content")[0];
+  content.style.position = "unset";
   year_archives.value = data.value[0];
 });
 const showArchivesByYear = (index) => {

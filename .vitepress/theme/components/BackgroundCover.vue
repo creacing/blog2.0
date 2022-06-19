@@ -6,8 +6,4 @@
 </template>
 <script setup>
 import Motto from "./Motto.vue";
-
 </script>
-<style lang='scss' scoped>
-</style>
-

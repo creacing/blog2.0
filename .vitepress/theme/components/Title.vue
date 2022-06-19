@@ -13,9 +13,8 @@ const { title, description, lastUpdated } = pageData;
 dayjs.extend(relativeTime);
 const date = dayjs().to(dayjs(lastUpdated));
 </script>
-<style scoped>
+<style lang='scss' scoped>
 .title {
-  /* color: #37463c; */
   color: var(--c-black);
   font-weight: 600;
   font-size: 2.25em;
@@ -33,7 +32,6 @@ const date = dayjs().to(dayjs(lastUpdated));
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px dashed #c7c7c7;
-  color: #fff;
 }
 </style>
 

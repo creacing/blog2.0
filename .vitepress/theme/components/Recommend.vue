@@ -42,8 +42,8 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
-const getOthers = () => { }
+import { ref } from "vue";
+const getOthers = () => {};
 </script>
 <style lang='scss' scoped>
 .rec-content {

@@ -48,7 +48,7 @@ import HomeHead from "./HomeHead.vue";
 import { ref } from "vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
-const getPage = () => { };
+const getPage = () => {};
 // get posts
 let postsAll = theme.value.posts || [];
 // get postLength
@@ -220,6 +220,7 @@ const transDate = (date) => {
     width: 55%;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: -3rem;
     .blog-item {
       width: 32%;
       margin: 1rem 0;

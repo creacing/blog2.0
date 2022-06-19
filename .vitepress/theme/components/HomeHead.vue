@@ -85,7 +85,6 @@ const go = (platform) => {
 <style lang='scss' scoped>
 .my-card {
   min-height: 100vh;
-  //   height: 58rem;
   height: 100vh;
   display: flex;
   flex-direction: column;

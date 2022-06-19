@@ -76,7 +76,7 @@ const mouseleave = (nav) => {
       height: 1.5rem;
       display: flex;
       width: 5rem;
-      justify-content: flex-start;
+      justify-content: center;
       .my-nav-link {
         display: flex;
         justify-content: center;

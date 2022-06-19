@@ -1,12 +1,15 @@
 <template>
   <div class="my-nav-dialog">
-    <div class="my-sub-nav flexXY p-10" v-for="subNav in children">
+    <div
+      class="my-sub-nav flexXY p-10"
+      v-for="subNav in children"
+      :key="subNav"
+    >
       <div class="my-sub-nav-item flexX">
-        <img :src="subNav.icon" alt="">
-        <a :href="subNav.link" class=" color-black">{{subNav.text}}</a>
+        <img :src="subNav.icon" alt="" />
+        <a :href="subNav.link" class="color-black">{{ subNav.text }}</a>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -27,7 +30,5 @@ const props = defineProps({
   width: 180px;
   border-radius: 10px;
   background-color: rgba($color: #fff, $alpha: 0.3);
-  .my-sub-nav-item{
-  }
 }
 </style>

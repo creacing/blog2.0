@@ -20,8 +20,8 @@ body {
 
 .page,
 .home {
-    background: rgba(255, 255, 255, 0.3);
-    min-height: 100vh
+    // background: rgba(255, 255, 255, 0.3);
+    // min-height: 100vh
 }
 
 .theme {
@@ -46,10 +46,6 @@ header {
     z-index: 2;
 }
 
-// .nav-links .item .nav-link .item {
-//     color: #fff !important;
-//     font-size: 0.7rem;
-// }
 //用户名
 .nav-bar-title {
     color: #fff !important;
@@ -62,11 +58,14 @@ header {
     }
 }
 
+
 /* 滚动条的宽度 */
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
 }
+
 
 /* 滚动条的按钮 */
 
