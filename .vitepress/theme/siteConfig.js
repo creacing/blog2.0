@@ -44,7 +44,7 @@ const siteConfig = {
         },
         //   { text: "", link: "", icon: "/search.svg", child: [] },
     ],
-    author: ''
+    author: '七夜的许愿星'
 }
 
 export default siteConfig

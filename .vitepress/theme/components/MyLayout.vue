@@ -31,7 +31,9 @@
     <template #page-bottom> </template>
     <template #home-features> <home /></template>
   </Layout>
-  <CopyWright />
+  <div class="copy-wright">
+    <CopyWright />
+  </div>
 </template>
 <script setup>
 import DefaultTheme from "vitepress/theme";
@@ -156,5 +158,7 @@ const scrollTop = () => {
   height: 100%;
   width: 100%;
   background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
+}
+.copy-wright {
 }
 </style>
