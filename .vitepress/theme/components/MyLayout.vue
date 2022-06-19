@@ -62,33 +62,29 @@ const isPost = computed(() => {
 
   if (res) {
     setTimeout(() => {
-      if (content) {
-        const content = document.getElementsByClassName("content")[0];
-        content.style["margin-top"] = "25vh";
-        content.style["padding"] = "10px";
-        content.style["background-color"] = "#fff";
-        content.style["box-shadow"] = "var(--shadow)";
-        content.style["min-height"] = "40rem";
-        content.style["border-radius"] = "1rem";
-        content.style["padding-left"] = "1.5rem";
-        content.style["padding-right"] = "1.5rem";
-        content.style["position"] = "relative";
-      }
+      const content = document.getElementsByClassName("content")[0];
+      content.style["margin-top"] = "25vh";
+      content.style["padding"] = "10px";
+      content.style["background-color"] = "#fff";
+      content.style["box-shadow"] = "var(--shadow)";
+      content.style["min-height"] = "40rem";
+      content.style["border-radius"] = "1rem";
+      content.style["padding-left"] = "1.5rem";
+      content.style["padding-right"] = "1.5rem";
+      content.style["position"] = "relative";
     });
   } else {
     setTimeout(() => {
       const content = document.getElementsByClassName("content")[0];
-      if (content) {
-        content.style["margin-top"] = "unset";
-        content.style["padding"] = "unset";
-        content.style["background-color"] = "unset";
-        content.style["box-shadow"] = "unset";
-        content.style["min-height"] = "unset";
-        content.style["border-radius"] = "unset";
-        content.style["padding-left"] = "unset";
-        content.style["padding-right"] = "unset";
-        content.style["position"] = "unset";
-      }
+      content.style["margin-top"] = "unset";
+      content.style["padding"] = "unset";
+      content.style["background-color"] = "unset";
+      content.style["box-shadow"] = "unset";
+      content.style["min-height"] = "unset";
+      content.style["border-radius"] = "unset";
+      content.style["padding-left"] = "unset";
+      content.style["padding-right"] = "unset";
+      content.style["position"] = "unset";
     });
   }
   //判断是否为文章页面用于控制 <Title/> <Category/> 显示

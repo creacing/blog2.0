@@ -144,9 +144,7 @@ const getFontSize = (length) => {
 
 <style lang='scss' scoped>
 .tags-content {
-  //   box-shadow: 2px 2px 10px 2px rgba($color: #000000, $alpha: 0.3);
-  padding: 3rem;
-  //   border-radius: 1rem;
+  padding: 5px;
 }
 .bg-cover {
   top: 0;
