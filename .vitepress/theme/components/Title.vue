@@ -25,6 +25,7 @@ const date = dayjs().to(dayjs(lastUpdated));
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
+  text-align: center;
 }
 .date {
   font-size: 0.875rem;

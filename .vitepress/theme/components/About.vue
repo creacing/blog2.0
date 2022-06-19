@@ -25,8 +25,10 @@ onMounted(() => {
   background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   background-clip: text;
   .tags-header {
+    width: 90%;
     font-weight: bold;
     padding-bottom: 14px;
+    text-align: center;
   }
 }
 .about-card-content {

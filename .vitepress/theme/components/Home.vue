@@ -45,7 +45,7 @@
 import Card from "./Card.vue";
 import Recommend from "./Recommend.vue";
 import HomeHead from "./HomeHead.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useData, withBase } from "vitepress";
 const { theme } = useData();
 const getPage = () => {};
@@ -54,7 +54,9 @@ let postsAll = theme.value.posts || [];
 // get postLength
 let postLength = theme.value.postLength;
 // get pageSize
-let pageSize = theme.value.pageSize + 4;
+let pageSize =
+  window.innerWidth < 1000 ? theme.value.pageSize : theme.value.pageSize + 4;
+
 //  pagesNum
 let pagesNum =
   postLength % pageSize === 0
