@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-cover flexXY flexCol absolute">
-    <h1 class="tags-header">欢迎来到 {{ author }} 的个人小站</h1>
+  <div class="my-bg-cover flexXY flexCol absolute">
+    <h1 class="my-about-header">欢迎来到 {{ author }} 的个人小站</h1>
     <Motto />
   </div>
   <div class="about-card-content"></div>
@@ -9,14 +9,12 @@
 import siteConfig from "./../siteConfig";
 import Motto from "./Motto.vue";
 import { onMounted } from "vue";
+//作者名字
 let author = siteConfig.author;
-onMounted(() => {
-  const content = document.getElementsByClassName("content")[0];
-  content.style.position = "unset";
-});
+
 </script>
 <style lang='scss' scoped>
-.bg-cover {
+.my-bg-cover {
   top: 0;
   left: 0;
   width: 100%;
@@ -24,7 +22,7 @@ onMounted(() => {
   height: 45vh;
   background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   background-clip: text;
-  .tags-header {
+  .my-about-header {
     width: 90%;
     font-weight: bold;
     padding-bottom: 14px;

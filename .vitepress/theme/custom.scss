@@ -91,3 +91,7 @@ header {
 .container {
     min-width: 50%;
 }
+
+.sidebar.open {
+  border-right: 0;
+}

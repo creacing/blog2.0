@@ -5,7 +5,9 @@ const siteConfig = {
             text: "首页",
             link: "/",
             icon: "/home.svg",
+            //是否有下拉框 -1 没 0 向下 1 向上
             pull: "-1",
+            //下拉图标路径
             pullSrc: "",
             children: [],
         },
@@ -44,6 +46,7 @@ const siteConfig = {
         },
         //   { text: "", link: "", icon: "/search.svg", child: [] },
     ],
+    //作者名字
     author: '七夜的许愿星'
 }
 
