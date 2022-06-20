@@ -81,6 +81,9 @@ const demoArticle = {
 };
 </script>
 <style lang='scss' scope>
+.card-type a,.card-intro,.card-timezone{
+  color: rgba(132, 141, 164);
+}
 .card {
   width: 100%;
   display: flex;
@@ -134,7 +137,7 @@ const demoArticle = {
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(132, 141, 164, 0.2);
     .card-types {
       display: flex;
       .card-type {
@@ -152,10 +155,12 @@ const demoArticle = {
       .card-tag {
         border-radius: 10px;
         padding: 4px 6px;
-        background-color: rgb(127, 189, 255);
+        // background-color: rgb(127, 189, 255);
+        background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
         text-align: center;
         line-height: 1rem;
         margin: 0 1px;
+        color: #fff;
       }
     }
   }

@@ -122,7 +122,9 @@ const scrollTop = () => {
   box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
   z-index: 1;
   // background-color: rgba(59, 238, 238, 0.8);
-  background-color: rgba($color: #12c0fa, $alpha: 0.8);
+  // background-color: rgba($color: #12c0fa, $alpha: 0.8);
+  background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
+  opacity: 0.8;
 }
 .nav-cover {
   position: fixed;
@@ -133,7 +135,9 @@ const scrollTop = () => {
   box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
   z-index: 1;
   // background-color: rgba(59, 238, 238, 0.8);
-  background-color: rgba($color: #65d979, $alpha: 0.8);
+  // background-color: rgba($color: #65d979, $alpha: 0.8);
+  background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
+  opacity: 0.8;
 }
 .article-cover {
   height: 45vh;
