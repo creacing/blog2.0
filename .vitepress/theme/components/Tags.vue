@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-cover flexXY flexCol absolute">
-      <h1 class="tags-header">文笔标签</h1>
+      <h1 class="tags-header">分类</h1>
       <Motto />
     </div>
 

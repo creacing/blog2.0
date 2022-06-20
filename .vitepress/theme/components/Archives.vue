@@ -1,5 +1,6 @@
 <template>
   <div class="bg-cover flexXY flexCol absolute">
+    <h1 class="tags-header">归档</h1>
     <Motto />
   </div>
   <div class="archives">
@@ -77,6 +78,10 @@ const yearClick = (index) => {
   height: 45vh;
   background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   background-clip: text;
+  .tags-header {
+    font-weight: bold;
+    padding-bottom: 14px;
+  }
 }
 
 .years {
