@@ -10,7 +10,14 @@
         <div
           v-for="(item, key, index) in data"
           :key="item"
-          :style="[{ background: colorList[index] }]"
+          :style="[
+            {
+              background:
+                index < colorList.length
+                  ? colorList[index]
+                  : colorList[`${(index + 1) % colorList.length}`],
+            },
+          ]"
           style="opacity: 1; height: 2rem"
           class="m-5 flexXY"
         >
@@ -66,59 +73,6 @@ const colorList = [
   "#2ac6da",
   "#8193f1",
   "#ffcbd5",
-  "#ff9804",
-  "#b68dff",
-  "#84c7d0",
-  "#62b6cb",
-  "#c9abf3",
-  "#5f558e",
-  "#2fc7db",
-  "#decdfd",
-  "#d59787",
-  "#35bdb2",
-  "#d0bfb4",
-  "#8d99ae",
-  "#7ecccb",
-  "#c7a0c5",
-  "#98ba5d",
-  "#53807a",
-  "#6f556b",
-  "#ad93d6",
-  "#ff9804",
-  "#69b9cd",
-  "#60a8d3",
-  "#f1a9cc",
-  "#caaeff",
-  "#45cadd",
-  "#b29ddb",
-  "#84dcc6",
-  "#fcc7f5",
-  "#c2f8f6",
-  "#b288ff",
-  "#9ed8d8",
-  "#c2e9e6",
-  "#b9f2e7",
-  "#2ac6da",
-  "#8193f1",
-  "#ffcbd5",
-  "#ff9804",
-  "#b68dff",
-  "#84c7d0",
-  "#62b6cb",
-  "#c9abf3",
-  "#5f558e",
-  "#2fc7db",
-  "#decdfd",
-  "#d59787",
-  "#35bdb2",
-  "#d0bfb4",
-  "#8d99ae",
-  "#7ecccb",
-  "#c7a0c5",
-  "#98ba5d",
-  "#53807a",
-  "#6f556b",
-  "#ad93d6",
 ];
 
 const { theme } = useData();

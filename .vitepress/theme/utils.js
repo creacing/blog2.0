@@ -1,15 +1,15 @@
-type Post = {
-  frontMatter: {
-    date?: string;
-    title?: string;
-    tags?: string[];
-    description?: string;
-  };
-  regularPath: string;
-};
+// type Post = {
+//   frontMatter: {
+//     date?: string;
+//     title?: string;
+//     tags?: string[];
+//     description?: string;
+//   };
+//   regularPath: string;
+// };
 
-export function initTags(post: Post[]) {
-  const data: any = {};
+export function initTags(post) {
+  const data = {};
   for (let i = 0; i < post.length; i++) {
     const element = post[i];
     const tags = element.frontMatter.tags;
@@ -26,7 +26,7 @@ export function initTags(post: Post[]) {
   return data;
 }
 
-export function useYearSort(post: Post[]) {
+export function useYearSort(post) {
   const data = [];
   let year = "0";
   let num = -1;
@@ -38,7 +38,7 @@ export function useYearSort(post: Post[]) {
         data[num].push(element);
       } else {
         num++;
-        data[num] = [] as any;
+        data[num] = [];
         data[num].push(element);
         year = y;
       }

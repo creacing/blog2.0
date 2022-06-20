@@ -11,7 +11,6 @@ export default {
   Layout: MyLayout,
   enhanceApp ({ app, router, siteData }) {
     // register global components
-    //注册全局组件
     app.component("Archives", Archives);
     app.component("Tags", Tags);
     app.component("About", About);
