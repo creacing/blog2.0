@@ -1,7 +1,13 @@
 <template>
   <!-- 入口 -->
+  <!-- 右侧按钮 -->
+  <div class="right-buttons">
+    <RightButtons />
+  </div>
   <!-- 导航栏底部阴影效果 fixed-->
-  <div :class="showNavCover ? 'nav-cover' : ''"></div>
+  <div
+    :class="showNavCover ? (isHome ? 'nav-cover-home' : 'nav-cover') : ''"
+  ></div>
   <!-- 文章内容侧边栏 -->
   <div v-if="isPost" class="article-side-bar">
     <SideIndex />
@@ -13,7 +19,7 @@
       <Search />
     </template>
     <template #sidebar-top>
-      <div :class="isHome ? 'side-bar' : 'side-bar-home'">
+      <div :class="isHome ? 'side-bar-home' : 'side-bar'">
         <SideBar />
       </div>
     </template>
@@ -47,17 +53,11 @@ import Card from "./Card.vue";
 import Home from "./Home.vue";
 import SideIndex from "./SideIndex.vue";
 import Title from "./Title.vue";
+import RightButtons from "./RightButtons.vue"
 import { useData } from "vitepress";
 import { computed, ref, onMounted } from "vue";
 const showNavCover = ref(false);
 const isHome = ref(true);
-window.addEventListener("click", () => {
-  if (window.location.href.endsWith("/")) {
-    isHome.value = false;
-  } else {
-    isHome.value = true;
-  }
-});
 const isPost = computed(() => {
   const res =
     useData().page.value.relativePath.indexOf("posts") > -1 ? true : false;
@@ -67,6 +67,7 @@ const isPost = computed(() => {
       const content = document.getElementsByClassName("content")[0];
       content.style["margin-top"] = "25vh";
       content.style["padding"] = "10px";
+      // content.style["background-color"] = "rgba(60, 70, 98, 1)";
       content.style["background-color"] = "#fff";
       content.style["box-shadow"] = "var(--shadow)";
       content.style["min-height"] = "40rem";
@@ -74,6 +75,7 @@ const isPost = computed(() => {
       content.style["padding-left"] = "1.5rem";
       content.style["padding-right"] = "1.5rem";
       content.style["position"] = "relative";
+      // content.children[0].style["background-color"] = "rgba(60, 70, 98, 1)";
     });
   } else {
     setTimeout(() => {
@@ -96,6 +98,13 @@ const isPost = computed(() => {
 onMounted(() => {
   // 监听滚动条位置
   window.addEventListener("scroll", scrollTop, true);
+  window.addEventListener("click", () => {
+    if (window.location.href.endsWith("/")) {
+      isHome.value = true;
+    } else {
+      isHome.value = false;
+    }
+  });
 });
 // 实时滚动条高度 控制 导航栏的样式
 const scrollTop = () => {
@@ -104,6 +113,17 @@ const scrollTop = () => {
 };
 </script>
 <style lang='scss' scoped>
+.nav-cover-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  // background-color: rgba(59, 238, 238, 0.8);
+  background-color: rgba($color: #12c0fa, $alpha: 0.8);
+}
 .nav-cover {
   position: fixed;
   top: 0;
@@ -112,6 +132,8 @@ const scrollTop = () => {
   width: 100%;
   box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
   z-index: 1;
+  // background-color: rgba(59, 238, 238, 0.8);
+  background-color: rgba($color: #65d979, $alpha: 0.8);
 }
 .article-cover {
   height: 45vh;
@@ -159,6 +181,9 @@ const scrollTop = () => {
   width: 100%;
   background-image: linear-gradient(to top, #12c0fa 0%, #158df4 100%);
 }
-.copy-wright {
+.right-buttons {
+  position: fixed;
+  right: 3rem;
+  bottom: 20rem;
 }
 </style>

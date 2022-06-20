@@ -34,8 +34,44 @@
     </div>
 </body>
 <script>
-    // const foo = document.getElementsByClassName('foo')[0]
-    // foo.style.animation = "largeToSmall 1s forwards"
+     justify_location()
+            function justify_location() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+                    // 支持
+                    console.log("支持地理位置接口");
+                } else {
+                    // 不支持
+                    console.log("不支持地理位置接口");
+                }
+            }
+          
+            //同意授权
+ 
+            function geoSuccess(event) {
+               alert(`纬度:`+event.coords.latitude + ', ' +`经度:`+ event.coords.longitude);
+ 
+            }
+            //拒绝授权
+ 
+            function geoError(error) {
+                console.log(error)
+                console.log("Error code " + error.code + ". " + error.message);
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert("定位失败,用户拒绝请求地理定位");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert("定位失败,位置信息是不可用");
+                        break;
+                    case error.TIMEOUT:
+                        alert("定位失败,请求获取用户位置超时");
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        alert("定位失败,定位系统失效");
+                        break;
+                }
+            }
 </script>
 
 </html>

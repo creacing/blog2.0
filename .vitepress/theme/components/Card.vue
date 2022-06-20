@@ -167,7 +167,7 @@ const demoArticle = {
 }
 .card:hover {
   border-radius: 5px;
-  animation: smallToLargeHover 0.8s;
+  animation: smallToLargeHover 0.5s;
   animation-iteration-count: 2;
   animation-direction: alternate;
 }
