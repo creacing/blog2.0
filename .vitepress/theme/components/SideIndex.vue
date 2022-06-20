@@ -1,6 +1,9 @@
 <template>
   <div class="side-index bg-white-shadow" v-if="headers.length > 0">
-    <div class="color-black side-index-title">目录</div>
+    <div class="color-black side-index-title">
+      <img src="" class="side-index-title-icon" alt="">
+      <span class="side-index-title-name">目录</span>
+      </div>
     <ul class="side-index-ul">
       <li class="header" v-for="(item, index) in headers" :key="item">
         <a
@@ -34,6 +37,11 @@ console.log(headers, "pageData");
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  min-height: 30rem;
+}
+.side-index-title-name{
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 .side-index-title {
   padding-left: 40px;
@@ -43,12 +51,13 @@ console.log(headers, "pageData");
   text-indent: 2;
 }
 .header-a {
-  color: var(--c-black);
-  font-weight: 900;
+  color: rgb(0, 0, 0);
+  /* font-weight: 900; */
   display: block;
   padding: 5px 0;
 }
 .side-index-ul {
+  margin: 0;
   list-style-type: none;
 }
 </style>

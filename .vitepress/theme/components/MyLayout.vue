@@ -2,11 +2,19 @@
   <!-- 入口 -->
   <!-- 右侧按钮 -->
   <div class="right-buttons">
-    <RightButtons />
+    <SideButtons />
   </div>
   <!-- 导航栏底部阴影效果 fixed-->
   <div
-    :class="showNavCover ? (isHome ? 'nav-cover-home' : 'nav-cover') : ''"
+    :class="
+      showNavCover
+        ? isHome === 0
+          ? 'nav-cover-home'
+          : isHome === 1
+          ? 'nav-cover'
+          : 'nav-cover-article'
+        : ''
+    "
   ></div>
   <!-- 文章内容侧边栏 -->
   <div v-if="isPost" class="article-side-bar">
@@ -19,7 +27,7 @@
       <Search />
     </template>
     <template #sidebar-top>
-      <div :class="isHome ? 'side-bar-home' : 'side-bar'">
+      <div :class="isHome === 0 ? 'side-bar-home' : 'side-bar'">
         <SideBar />
       </div>
     </template>
@@ -28,6 +36,11 @@
       <!-- 文章标题背景色 -->
       <div class="article-cover" v-if="isPost">
         <!-- 文章遮罩 -->
+        <img
+          class="article-bg-img"
+          src="https://image.3001.net/images/20220123/16429456471702.png"
+          alt=""
+        />
         <div class="article-mask"></div>
         <div class="article-title">
           <Title />
@@ -53,11 +66,11 @@ import Card from "./Card.vue";
 import Home from "./Home.vue";
 import SideIndex from "./SideIndex.vue";
 import Title from "./Title.vue";
-import RightButtons from "./RightButtons.vue"
+import SideButtons from "./SideButtons.vue"
 import { useData } from "vitepress";
 import { computed, ref, onMounted } from "vue";
 const showNavCover = ref(false);
-const isHome = ref(true);
+const isHome = ref(0);
 const isPost = computed(() => {
   const res =
     useData().page.value.relativePath.indexOf("posts") > -1 ? true : false;
@@ -99,10 +112,13 @@ onMounted(() => {
   // 监听滚动条位置
   window.addEventListener("scroll", scrollTop, true);
   window.addEventListener("click", () => {
-    if (window.location.href.endsWith("/")) {
-      isHome.value = true;
+    const href = window.location.href
+    if (href.endsWith("/")) {
+      isHome.value = 0;
+    } else if (href.endsWith("about.html") || href.endsWith("archives.html") || href.endsWith("tags.html")) {
+      isHome.value = 1;
     } else {
-      isHome.value = false;
+      isHome.value = -1
     }
   });
 });
@@ -139,9 +155,23 @@ const scrollTop = () => {
   background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   opacity: 0.8;
 }
+.nav-cover-article {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  // background-color: rgba(59, 238, 238, 0.8);
+  // background-color: rgba($color: #65d979, $alpha: 0.8);
+  // background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
+  background-color: rgba(175, 167, 167, 0.8);
+  opacity: 0.8;
+}
 .article-cover {
   height: 45vh;
-  background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
+  // background-image: linear-gradient(to top, #65d979 0%, #5ecdb7 100%);
   position: absolute;
   width: 100%;
   top: 0;
@@ -151,7 +181,14 @@ const scrollTop = () => {
   height: 45vh;
   position: absolute;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+}
+.article-bg-img {
+  height: 45vh;
+  position: absolute;
+  width: 100%;
+  z-index: -2;
 }
 .article-title {
   position: absolute;
@@ -167,8 +204,8 @@ const scrollTop = () => {
 .article-side-bar {
   position: fixed;
   z-index: 1000;
-  top: 25vh;
-  left: 10rem;
+  top: 40vh;
+  right: 8rem;
 }
 @media (max-width: 1400px) {
   .article-side-bar {
