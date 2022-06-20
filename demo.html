@@ -21,7 +21,9 @@
         }
         
         .foo:hover {
-            animation: largeToSmall 1s forwards alternate;
+            animation: largeToSmall 1s forwards;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
         }
     </style>
 </head>

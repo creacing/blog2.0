@@ -60,7 +60,7 @@ onUnmounted(() => {
 const props = defineProps({
   cardValue: {
     type: Object,
-    default() {
+    default () {
       return {
         title: "",
         items: [],
@@ -167,8 +167,9 @@ const demoArticle = {
 }
 .card:hover {
   border-radius: 5px;
-  animation: smallToLargeHover 0.5s;
-  //   animation-direction: alternate;
+  animation: smallToLargeHover 0.8s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
 }
 </style>
 
